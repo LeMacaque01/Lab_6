@@ -1,0 +1,47 @@
+# Lab 6 Software Engineering
+
+# Function to encode a message by adding 3 to each digit and taking the modulo 10
+def encoder(message):
+    result = ''  # Initialize an empty string to store the encoded message
+    for digit in message:  # Iterate through each character in the message
+        new_digit = str((int(digit) + 3) % 10)  # Convert the character to integer, add 3, and take the modulo 10
+        result += new_digit  # Append the encoded digit to the result string
+    return result  # Return the encoded message
+
+# Function to decode an encoded message by subtracting 3 from each digit and taking the modulo 10
+def decoder(message):
+    result = ''  # Initialize an empty string to store the decoded message
+    for digit in message:  # Iterate through each character in the message
+        new_digit = str((int(digit) - 3) % 10)  # Convert the character to integer, subtract 3, and take the modulo 10
+        result += new_digit  # Append the decoded digit to the result string
+    return result  # Return the decoded message
+
+# Main function to interact with the user and demonstrate the encoding/decoding functionality
+def main():
+    while True:  # Run an infinite loop until the user chooses to exit
+        print("Menu")
+        print("-------------")
+        print("1. To encode")
+        print("2. To decode")
+        print("3. To exit")
+        choice = input("Please enter an option: ")  # Prompt the user to enter their choice
+
+        if choice == "1":  # If the user chooses to encode
+            value = input("Enter an 8-digit password: ")  # Prompt the user to enter an 8-digit password
+            print("Your password has been encoded and stored!")  # Inform the user that the password has been encoded
+
+        elif choice == "2":  # If the user chooses to decode
+            value = encoder(value)  # Encode the previously entered password
+            value2 = decoder(value)  # Decode the encoded password
+            print(f"The encoded password is {value}, and the original password is {value2}")  # Display the encoded and decoded passwords
+
+        elif choice == "3":  # If the user chooses to exit
+            break  # Exit the loop
+
+        else:  # If the user enters an invalid choice
+            print("Invalid choice")  # Inform the user that the choice is invalid
+
+        print()  # Print an empty line for readability
+
+if __name__ == "__main__":
+    main()  # Call the main function if the script is executed directly
