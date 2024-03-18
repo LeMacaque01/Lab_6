@@ -8,13 +8,6 @@ def encoder(message):
         result += new_digit  # Append the encoded digit to the result string
     return result  # Return the encoded message
 
-# Function to decode an encoded message by subtracting 3 from each digit and taking the modulo 10
-def decoder(message):
-    result = ''  # Initialize an empty string to store the decoded message
-    for digit in message:  # Iterate through each character in the message
-        new_digit = str((int(digit) - 3) % 10)  # Convert the character to integer, subtract 3, and take the modulo 10
-        result += new_digit  # Append the decoded digit to the result string
-    return result  # Return the decoded message
 
 # Main function to interact with the user and demonstrate the encoding/decoding functionality
 def main():
@@ -44,4 +37,4 @@ def main():
         print()  # Print an empty line for readability
 
 if __name__ == "__main__":
-    main()  # Call the main function if the script is executed directly
+    main()
