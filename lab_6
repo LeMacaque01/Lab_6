@@ -1,5 +1,4 @@
 # Lab 6 Software Engineering
-# Gianluca Perrella
 
 # Function to encode a message by adding 3 to each digit and taking the modulo 10
 def encoder(message):
@@ -9,8 +8,13 @@ def encoder(message):
         result += new_digit  # Append the encoded digit to the result string
     return result  # Return the encoded message
 
+# function to decode a message by subtracting 3 to each digit and taking the modulo 10
 def decoder(message):
-    pass
+    result = '' # initialize result as an empty string
+    for digit in message: # iterate each character in message
+        new_digit = str((int(digit) - 3) % 10) # set character to integer, subtract 3, and take the modulo 10
+        result += new_digit # add decoded character to message
+    return result # return decoded message
 
 # Main function to interact with the user and demonstrate the encoding/decoding functionality
 def main():
