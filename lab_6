@@ -9,7 +9,7 @@ def encoder(message):
         result += new_digit  # Append the encoded digit to the result string
     return result  # Return the encoded message
 
-def decode(message):
+def decoder(message):
     pass
 
 # Main function to interact with the user and demonstrate the encoding/decoding functionality
